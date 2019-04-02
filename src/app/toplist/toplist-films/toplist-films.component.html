@@ -1,3 +1,19 @@
-<p>
-  toplist-films works!
-</p>
+
+<div>
+    <h1>Worlds greatest movie voter!!</h1>
+    <div>
+         <button (click)="fetchMoviesFromApi()">Render MovieList</button> <br/>
+         <div class="showMovie" *ngFor="let movieList of movieUrl">
+             <h1>{{movieList.title}}</h1><h2>({{movieList.release_date}})</h2>
+             <h2>Overall Rating: {{movieList.vote_average}}
+                 <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' />
+             </h2>
+            <div class="moviePosterContainer">
+                 <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{movieList.poster_path}}" alt="x">
+            </div>
+            <div class="movieInfo">
+                {{movieList.overview}}
+            </div>
+         </div>
+        </div>
+    </div>

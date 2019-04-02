@@ -5,6 +5,7 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { SearchRateFilmModule } from './search-rate-film/search-rate-film.module';
 import { ToplistModule } from './toplist/toplist.module';
 import { UserFormModule } from './user-form/user-form.module';
+import { SharedModule } from './shared/shared.module'
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     LandingPageModule,
     SearchRateFilmModule,
     ToplistModule,
-    UserFormModule
+    UserFormModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
