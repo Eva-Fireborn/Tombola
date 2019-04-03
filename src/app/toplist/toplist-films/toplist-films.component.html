@@ -2,10 +2,10 @@
 <h1>Movie-Mix</h1>
 <h3>Våran totalt uniqa top 20 lista</h3>
 </div>
-
+<button (click)="newMessage()">click me!</button>
 <div
   class="container"
-  *ngFor="let listItem of movieMix_ratings">
+  *ngFor="let listItem of movieMix_ratings; let i = index">
 <div class="row" style="border: 1px solid black;">
   <div class="col-sm-7">
     <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}} <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
@@ -16,15 +16,9 @@
       <div class="col-sm-7">
           <p class="movieInfo">{{listItem.overview}}</p>
           <button type="button" class="btn btn-warning">IMDB SCORE {{listItem.vote_average}}</button>
-          <button type="button" class="btn btn-danger">MOVIEMIX SCORE {{listItem.popularity}} </button>
-          <button (click)="onClick">Click Me!</button>
+          <button type="button" class="btn btn-danger" (click)="onClick(i)">MOVIEMIX SCORE {{listItem.popularity}} </button>
       </div>
-    </div> -->
-
-
-
-
-
+    </div>
    </div>
     <div class="col-sm-5" hidden="true">
     <div class="jumbotron text-center"><h2>More content:</h2></div><br><br>

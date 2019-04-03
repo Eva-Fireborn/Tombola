@@ -9,10 +9,13 @@ import { ApiDataService } from '../../shared/api-data.service'
 export class ToplistFilmsComponent implements OnInit {
     stars: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     movieMix_rating: number;
-    movieMix_ratings: any[] = [];
+    movieMix_ratings: any[];
 
   constructor(private movieData: ApiDataService) { }
 
+  onClick(i){
+   this.movieMix_ratings[i].popularity +=1
+  }
 
   ngOnInit() {
     this.movieData.getMovie().subscribe(
@@ -25,14 +28,14 @@ export class ToplistFilmsComponent implements OnInit {
               overview: obj.overview,
               release_date: obj.release_date,
               vote_average: obj.vote_average,
-              popularity: obj.popularity,
+              popularity: obj.popularity = 0,
             }));
-
-
         }
     )
-
+      this.movieData.currentMovieArray.subscribe(movieMix_ratings => this.movieMix_ratings = movieMix_ratings)
   }
-
+  newMessage() {
+    this.movieData.updateMovieArray(this.movieMix_ratings)
+  }
 
 }
