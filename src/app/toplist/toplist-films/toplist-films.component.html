@@ -1,9 +1,45 @@
+<div class="jumbotron text-center">
+<h1>Movie-Mix</h1>
+<h3>Våran totalt uniqa top 20 lista</h3>
+</div>
 
-<div>
-    <h1>Worlds greatest movie voter!!</h1>
-    <div>
-         <button (click)="fetchMoviesFromApi()">Render MovieList</button> <br/>
-         <div class="showMovie" *ngFor="let movieList of movieUrl">
+
+<div
+ class="container"
+ *ngFor="let movieList of movieUrl">
+
+<div class="row" style="border: 1px solid black;">
+  <div class="col-sm-7">
+    <h1 class="movieTitle">{{movieList.title}}</h1><h3>{{movieList.release_date}} IMDB: {{movieList.vote_average}} Our Score <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
+    <div class="row" id="movieStats">
+      <div class="col-sm-5">
+              <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{movieList.poster_path}}" alt="x">
+      </div>
+      <div class="col-sm-7">
+          <p class="movieInfo">{{movieList.overview}}</p>
+          <button type="button" class="btn btn-warning">IMDB</button>
+          <button type="button" class="btn btn-danger">ROTTEN TOMATOS</button>
+      </div>
+
+    </div>
+  </div>
+  <div class="col-sm-5" hidden="true">
+    <div class="jumbotron text-center"><h2>More content:</h2></div><br><br>
+
+    <p class="movieInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+       qui officia deserunt mollit anim id est laborum.</p>
+
+  </div>
+
+
+</div>
+</div>
+         <!-- <div class="showMovie" *ngFor="let movieList of movieUrl">
              <h1>{{movieList.title}}</h1><h2>({{movieList.release_date}})</h2>
              <h2>Overall Rating: {{movieList.vote_average}}
                  <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' />
@@ -16,4 +52,4 @@
             </div>
          </div>
         </div>
-    </div>
+    </div> -->

@@ -6,4 +6,5 @@ export interface Movie {
     vote_average: number;
     release_date: number;
     overview: string;
+    movieMix_rating: number;
 }

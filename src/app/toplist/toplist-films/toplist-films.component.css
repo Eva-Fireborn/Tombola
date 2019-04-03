@@ -1,36 +1,33 @@
-/* app-meow {
- display: flex;
- flex-direction: column;
- align-items: center;
- flex-wrap: wrap;
-} */
-div img {
-  display: hidden;
-}
-div img::after {
-    font-size: 2em;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-  content: 'Unicorns is dead. Unicorns remains dead. And we have killed them.'
-}
 
 .starRating {
    border: none;
    margin: 0;
    padding: 0;
    background: transparent;
-   max-width: 0.8em;
+   max-width: 1.2em;
    max-height: auto;
 }
 
-
-.moviePosters {
-max-width: 15em;
-height: 15em;
+.col-sm-5 {
+  padding: 0px;
 }
 
-.showMovie {
-   margin: 0em 1em 1em 1em;
-   background-color: #ffe6e6;
+.moviePosters {
+max-width: 25em;
+height: 25em;
+}
+
+.movieTitle {
+  width: auto;
+  font-size: 2.5em;
+}
+.movieInfo {
+  font-size: 1.3em;
+}
+.row {
+  background-color: lightgrey;
+  margin: 1em;
+}
+#movieStats {
+  border: 1px solid black;
 }
