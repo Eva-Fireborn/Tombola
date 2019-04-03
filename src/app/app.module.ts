@@ -6,6 +6,7 @@ import { SearchRateFilmModule } from './search-rate-film/search-rate-film.module
 import { ToplistModule } from './toplist/toplist.module';
 import { UserFormModule } from './user-form/user-form.module';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     LandingPageModule,
     SearchRateFilmModule,
     ToplistModule,
-    UserFormModule
+    UserFormModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
