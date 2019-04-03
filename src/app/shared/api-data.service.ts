@@ -17,6 +17,5 @@ export class ApiDataService {
 
     getMovie(): Observable<Movie> {
         return this.http.get<Movie>(this.url);
-
     }
 }

@@ -31,3 +31,10 @@ height: 25em;
 #movieStats {
   border: 1px solid black;
 }
+.col-sm-12 {
+  width: 50%;
+}
+.row {
+  margin: 1em;
+  
+}

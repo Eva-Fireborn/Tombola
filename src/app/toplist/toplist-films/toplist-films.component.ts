@@ -7,18 +7,32 @@ import { ApiDataService } from '../../shared/api-data.service'
   styleUrls: ['./toplist-films.component.css']
 })
 export class ToplistFilmsComponent implements OnInit {
-    movieUrl: any = null;
     stars: any[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    movieMix_rating: number;
+    movieMix_ratings: any[] = [];
 
   constructor(private movieData: ApiDataService) { }
+
 
   ngOnInit() {
     this.movieData.getMovie().subscribe(
         movieInformation => {
-            this.movieUrl = movieInformation.results;
 
-            console.log('above stars', this.stars)
+            let movieInfo = movieInformation.results;
+            this.movieMix_ratings = movieInfo.map(obj => ({
+              title: obj.title,
+              poster_path: obj.poster_path,
+              overview: obj.overview,
+              release_date: obj.release_date,
+              vote_average: obj.vote_average,
+              popularity: obj.popularity,
+            }));
+
+
         }
     )
+
   }
+
+
 }

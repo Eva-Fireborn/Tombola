@@ -3,27 +3,30 @@
 <h3>Våran totalt uniqa top 20 lista</h3>
 </div>
 
-
 <div
- class="container"
- *ngFor="let movieList of movieUrl">
-
+  class="container"
+  *ngFor="let listItem of movieMix_ratings">
 <div class="row" style="border: 1px solid black;">
   <div class="col-sm-7">
-    <h1 class="movieTitle">{{movieList.title}}</h1><h3>{{movieList.release_date}} IMDB: {{movieList.vote_average}} Our Score <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
+    <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}} <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
     <div class="row" id="movieStats">
       <div class="col-sm-5">
-              <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{movieList.poster_path}}" alt="x">
+              <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="x">
       </div>
       <div class="col-sm-7">
-          <p class="movieInfo">{{movieList.overview}}</p>
-          <button type="button" class="btn btn-warning">IMDB</button>
-          <button type="button" class="btn btn-danger">ROTTEN TOMATOS</button>
+          <p class="movieInfo">{{listItem.overview}}</p>
+          <button type="button" class="btn btn-warning">IMDB SCORE {{listItem.vote_average}}</button>
+          <button type="button" class="btn btn-danger">MOVIEMIX SCORE {{listItem.popularity}} </button>
+          <button (click)="onClick">Click Me!</button>
       </div>
+    </div> -->
 
-    </div>
-  </div>
-  <div class="col-sm-5" hidden="true">
+
+
+
+
+   </div>
+    <div class="col-sm-5" hidden="true">
     <div class="jumbotron text-center"><h2>More content:</h2></div><br><br>
 
     <p class="movieInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -37,19 +40,5 @@
   </div>
 
 
+  </div>
 </div>
-</div>
-         <!-- <div class="showMovie" *ngFor="let movieList of movieUrl">
-             <h1>{{movieList.title}}</h1><h2>({{movieList.release_date}})</h2>
-             <h2>Overall Rating: {{movieList.vote_average}}
-                 <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' />
-             </h2>
-            <div class="moviePosterContainer">
-                 <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{movieList.poster_path}}" alt="x">
-            </div>
-            <div class="movieInfo">
-                {{movieList.overview}}
-            </div>
-         </div>
-        </div>
-    </div> -->

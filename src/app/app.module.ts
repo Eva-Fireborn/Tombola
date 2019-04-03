@@ -7,6 +7,7 @@ import { ToplistModule } from './toplist/toplist.module';
 import { UserFormModule } from './user-form/user-form.module';
 import { SharedModule } from './shared/shared.module'
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     SearchRateFilmModule,
     ToplistModule,
     UserFormModule,
+    AppRoutingModule,
     SharedModule
   ],
   providers: [],
