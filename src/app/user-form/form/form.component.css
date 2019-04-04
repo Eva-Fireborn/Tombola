@@ -1,0 +1,28 @@
+.inputFormContainer {
+    margin-top: 13em;
+    text-align: center;
+}
+.inputForm {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+input {
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    width: 50em;
+    height: 2em;
+    margin: 1em;
+}
+textarea {
+    background-color: black;
+    color: white;
+}
+button {
+    width: 6em;
+    height: 2em;
+    margin-left: 1em;
+    padding: 1.7em;
+}

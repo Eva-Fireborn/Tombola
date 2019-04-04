@@ -28,7 +28,6 @@ export class ToplistFilmsComponent implements OnInit {
               popularity: obj.popularity,
             }));
 
-
         }
     )
 
