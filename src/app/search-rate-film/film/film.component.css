@@ -1,0 +1,40 @@
+
+.starRating {
+   border: none;
+   margin: 0;
+   padding: 0;
+   background: transparent;
+   max-width: 1.2em;
+   max-height: auto;
+}
+
+.col-sm-5 {
+  padding: 0px;
+}
+
+.moviePosters {
+max-width: 25em;
+height: 25em;
+}
+
+.movieTitle {
+  width: auto;
+  font-size: 2.5em;
+}
+.movieInfo {
+  font-size: 1.3em;
+}
+.row {
+  background-color: lightgrey;
+  margin: 1em;
+}
+#movieStats {
+  border: 1px solid black;
+}
+.col-sm-12 {
+  width: 50%;
+}
+.row {
+  margin: 1em;
+
+}
