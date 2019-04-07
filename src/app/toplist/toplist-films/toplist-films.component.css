@@ -25,7 +25,7 @@ height: 25em;
   font-size: 1.3em;
 }
 .row {
-  background-color: lightgrey;
+  background-color: black;
   margin: 1em;
 }
 #movieStats {
@@ -36,5 +36,9 @@ height: 25em;
 }
 .row {
   margin: 1em;
-  
+
 }
+
+/**/
+
+/**/

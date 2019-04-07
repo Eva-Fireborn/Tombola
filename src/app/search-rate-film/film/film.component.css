@@ -1,13 +1,4 @@
 
-.starRating {
-   border: none;
-   margin: 0;
-   padding: 0;
-   background: transparent;
-   max-width: 1.2em;
-   max-height: auto;
-}
-
 .col-sm-5 {
   padding: 0px;
 }
@@ -25,7 +16,7 @@ height: 25em;
   font-size: 1.3em;
 }
 .row {
-  background-color: lightgrey;
+  background-color: black;
   margin: 1em;
 }
 #movieStats {
@@ -36,5 +27,8 @@ height: 25em;
 }
 .row {
   margin: 1em;
-
+}
+.transparent {
+  background-color: transparent;
+  border: transparent
 }

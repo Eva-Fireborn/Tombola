@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {  ApiDataService } from '../../shared/api-data.service';
+import { MovielistService } from '../../shared/movielist.service';
 
 @Component({
   selector: 'app-film',
@@ -7,15 +8,32 @@ import {  ApiDataService } from '../../shared/api-data.service';
   styleUrls: ['./film.component.css']
 })
 export class FilmComponent implements OnInit {
-   movieMix_ratings: any[];
-
-  constructor(private apiData: ApiDataService) { }
+    moviesToRate: any[];
+    test = 'fas'
+  constructor(
+    private apiData: ApiDataService,
+    private movieList:  MovielistService
+    ) { }
 
   ngOnInit() {
-    this.apiData.currentMovieArray.subscribe(movieMix_ratings => this.movieMix_ratings = movieMix_ratings)
+    this.moviesToRate = this.movieList.getMoviesToRate()
+
+
+     // this.apiData.currentMovieArray.subscribe(moviesToRate => this.moviesToRate = moviesToRate)
   }
-  onClick(i){
-   this.movieMix_ratings[i].popularity +=1
+
+
+
+
+  buttonFunction(i, num){
+   this.moviesToRate[i].popularity += num
+   this.moviesToRate[i].numberOfVotes += 1
+   console.log(this.moviesToRate[i].popularity)
+   console.log(this.moviesToRate[i].numberOfVotes)
+   console.log(this.moviesToRate[i].title)
+   this.moviesToRate.splice(i, 1);
+
   }
+
 
 }

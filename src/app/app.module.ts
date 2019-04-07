@@ -8,7 +8,12 @@ import { UserFormModule } from './user-form/user-form.module';
 import { SharedModule } from './shared/shared.module'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-
+import { BarRatingModule } from "ngx-bar-rating";
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { MovielistService } from './shared/movielist.service';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 @NgModule({
   declarations: [
     AppComponent
@@ -21,9 +26,16 @@ import { AppRoutingModule } from './app-routing.module';
     ToplistModule,
     UserFormModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    BarRatingModule,
+    AngularFontAwesomeModule,
+
   ],
-  providers: [],
+  providers: [MovielistService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+constructor() {
+  library.add( fasStar, farStar);
+}
+ }

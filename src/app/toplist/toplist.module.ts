@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { ToplistFilmsComponent } from './toplist-films/toplist-films.component';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { ToplistFilmsComponent } from './toplist-films/toplist-films.component';
     CommonModule,
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   exports: [
     ToplistFilmsComponent

@@ -1,14 +1,26 @@
+
+
 <div class="jumbotron text-center">
 <h1>Movie-Mix</h1>
 <h3>Våran totalt uniqa top 20 lista</h3>
 </div>
-<button (click)="newMessage()">click me!</button>
+<button class="btn btn-success"(click)="getMovieDataApi()" *ngIf="buttonToggleFetch">click me to fetch</button>
+<button class="btn btn-success"(click)="saveList()" *ngIf="buttonToggleSave">click me after fetch</button>
+
+<button class="btn btn-success"(click)="loopContent()">LoopiLoop</button>
 <div
   class="container"
-  *ngFor="let listItem of movieMix_ratings; let i = index">
+  *ngFor="let listItem of ratedMovies; let i = index">
 <div class="row" style="border: 1px solid black;">
   <div class="col-sm-7">
-    <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}} <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
+    <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}}</h3><br>
+    <div>
+
+
+      <br>
+      <fa-icon *ngFor="let star of listItem.numberOfStars"  [icon]="['fas', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '200'}" ></fa-icon>
+
+    </div>
     <div class="row" id="movieStats">
       <div class="col-sm-5">
               <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="x">
@@ -17,6 +29,7 @@
           <p class="movieInfo">{{listItem.overview}}</p>
           <button type="button" class="btn btn-warning">IMDB SCORE {{listItem.vote_average}}</button>
           <button type="button" class="btn btn-danger" (click)="onClick(i)">MOVIEMIX SCORE {{listItem.popularity}} </button>
+
       </div>
     </div>
    </div>

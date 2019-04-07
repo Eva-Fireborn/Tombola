@@ -1,9 +1,15 @@
 export interface Movie {
-    title: string;
-    //change to right datatyp when we know.
-    results: any;
-    vote_average: number;
-    release_date: number;
-    overview: string;
-    popularity: number;
+  overview: string;
+  popularity: number
+  poster_path: string
+  release_date: string;
+  title: string;
+  vote_average:  number;
+  results: any;
+  youHaveVoted: boolean;
+  numberOfStars: any[];
+  whenStarClicked: boolean
+
+  showWhenVote: boolean
+  numberOfVotes: number
 }

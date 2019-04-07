@@ -1,15 +1,39 @@
+
 <div class="jumbotron text-center">
 <h1>Movie-Mix</h1>
-<h3>Våran totalt uniqa top 20 lista</h3>
+<h3>Våran RejtLista</h3>
 </div>
-<button (click)="newMessage()">click me!</button>
-<div
-  class="container"
-  *ngFor="let listItem of movieMix_ratings; let i = index">
-<div class="row" style="border: 1px solid black;">
+
+
+<fa-icon [icon]="['fas', 'star']"></fa-icon>
+<fa-icon [icon]="['far', 'star']"></fa-icon>
+
+
+
+  <div
+    class="container"
+    *ngFor="let listItem of moviesToRate; let i = index">
+  <div
+    class="row"
+    style="border: 1px solid black;">
   <div class="col-sm-7">
-    <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}} <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /></h3>
-    <div class="row" id="movieStats">
+    <h1 class="movieTitle">{{listItem.title}}</h1><h3>{{listItem.release_date}}</h3><br>
+
+    <div>
+      <div>
+        <button (click)="buttonFunction(i, 1)" class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '200'}" ></fa-icon></button>
+        <button (click)="buttonFunction(i, 2)" class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '200'}" ></fa-icon></button>
+        <button (click)="buttonFunction(i, 3)" class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '200'}" ></fa-icon></button>
+        <button (click)="buttonFunction(i, 4)" class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '2200'}" ></fa-icon></button>
+        <button (click)="buttonFunction(i, 5)" class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '2200'}" ></fa-icon></button>
+
+      </div>
+      <div>
+         <!-- <button class="transparent"><fa-icon [icon]="['far', 'star']"  size="2x" [styles]="{'color': 'gold', 'font-weight': '200'}" ></fa-icon></button> -->
+      </div>
+    </div>
+
+    <!-- <div class="row" id="movieStats" *ngIf="hidden">
       <div class="col-sm-5">
               <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="x">
       </div>
@@ -20,19 +44,5 @@
       </div>
     </div>
    </div>
-    <div class="col-sm-5" hidden="true">
-    <div class="jumbotron text-center"><h2>More content:</h2></div><br><br>
-
-    <p class="movieInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-       qui officia deserunt mollit anim id est laborum.</p>
-
   </div>
-
-
-  </div>
-</div>
+</div> -->

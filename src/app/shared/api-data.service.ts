@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Movie } from './movie';
 import {BehaviorSubject} from 'rxjs'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,10 +17,11 @@ export class ApiDataService {
     updateMovieArray(movieMix_ratings: any[]) {
       this.movieArray.next(movieMix_ratings)
     }
-    
+
     constructor(http: HttpClient) { this.http = http; }
 
     getMovie(): Observable<Movie> {
         return this.http.get<Movie>(this.url);
     }
+
 }
