@@ -1,40 +1,32 @@
-
-.starRating {
-   border: none;
-   margin: 0;
-   padding: 0;
-   background: transparent;
-   max-width: 1.2em;
-   max-height: auto;
+.container{
+  display: inline-flex
 }
-
-.col-sm-5 {
-  padding: 0px;
+.filmContainer {
+  width: 320px;
+  height: 220px;
+  border: 2px solid black;
+  overflow: hidden;
+  margin: 20px;
 }
-
+.filmContainer:hover{
+  cursor: pointer;
+}
+h2 {
+  font-size: 1.2em;
+  margin: 0px;
+}
+h3 {
+  font-size: 0.8em;
+  margin: 0px;
+}
+.starRating{
+  height: 15px;
+}
 .moviePosters {
-max-width: 25em;
-height: 25em;
-}
-
-.movieTitle {
-  width: auto;
-  font-size: 2.5em;
+  height: 200px;
+  float: left;
+  margin: 10px;
 }
 .movieInfo {
-  font-size: 1.3em;
-}
-.row {
-  background-color: lightgrey;
-  margin: 1em;
-}
-#movieStats {
-  border: 1px solid black;
-}
-.col-sm-12 {
-  width: 50%;
-}
-.row {
-  margin: 1em;
-
+  margin: 0px;
 }

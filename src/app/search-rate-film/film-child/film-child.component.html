@@ -1,0 +1,16 @@
+<div class="selectedContainer" *ngIf="selectedFilm">
+  <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{selectedFilm.poster_path}}" alt="Filmposter">
+  <div class="innerConatiner">
+    <h2>{{selectedFilm.title}}</h2>
+    <h3><img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{selectedFilm.vote_average}}</span></h3>
+    <p class="movieInformation">{{selectedFilm.overview}}</p>
+    <p class="movieRelease">Release: {{selectedFilm.release_date}}</p>
+    <div class="rating">
+      <span (click)="voteOnFilm(rating = 10)">☆</span><span (click)="voteOnFilm(rating = 9)">☆</span><span (click)="voteOnFilm(rating = 8)">☆</span><span (click)="voteOnFilm(rating = 7)">☆</span><span (click)="voteOnFilm(rating = 6)">☆</span><span (click)="voteOnFilm(rating = 5)">☆</span><span (click)="voteOnFilm(rating = 4)" >☆</span><span (click)="voteOnFilm(rating = 3)">☆</span><span (click)="voteOnFilm(rating = 2)">☆</span><span (click)="voteOnFilm(rating = 1)">☆</span>
+      <p>Ge ditt betyg</p>
+    </div>
+    <div *ngIf="voted" class="voted">
+      Filmen och ditt betyg ligger nu på din lista. Du kan när du vill ge filmen ett nytt betyg.
+    </div>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-
+.container{
+  width: 50%;
+}
 .starRating {
    border: none;
    margin: 0;
@@ -37,4 +39,16 @@ height: 25em;
 .row {
   margin: 1em;
   
+}.active {
+  background-color: black;
+  color: white;
+}
+.toplistMenu {
+  display: inline-flex;
+}
+.toplistMenu > div {
+  margin-right: 60px;
+}
+.toplistMenu > div > h3{
+  margin: 20px;
 }
