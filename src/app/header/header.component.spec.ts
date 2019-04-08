@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandingPageButtonComponent } from './landing-page-button.component';
+import { HeaderComponent } from './header.component';
 
-describe('LandingPageButtonComponent', () => {
-  let component: LandingPageButtonComponent;
-  let fixture: ComponentFixture<LandingPageButtonComponent>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingPageButtonComponent ]
+      declarations: [ HeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LandingPageButtonComponent);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -22,5 +22,4 @@ describe('LandingPageButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

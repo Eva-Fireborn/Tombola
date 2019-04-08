@@ -1,0 +1,19 @@
+
+.sasa{
+  size: center;
+  background-color: crimson;
+  position: absolute;
+  top: 61%;
+  left: 45%;
+  font-weight: bold;
+  z-index: 2;
+  width: 15%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 13px;
+  cursor: pointer;
+  outline: none;
+  letter-spacing: 3px;
+  border: 2px solid #2e2e2e;
+  overflow: hidden;
+}

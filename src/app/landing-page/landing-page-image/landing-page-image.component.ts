@@ -13,5 +13,6 @@ export class LandingPageImageComponent implements OnInit {
 
   ngOnInit() {
   }
+  
 
 }

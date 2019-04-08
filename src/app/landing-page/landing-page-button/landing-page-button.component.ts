@@ -11,9 +11,13 @@ export class LandingPageButtonComponent implements OnInit {
     console.log('Du har klickat på mig');
   }
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
+    
+    
   }
 
+  ngOnInit() {
+  
+    
+  }
 }
