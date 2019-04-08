@@ -5,12 +5,15 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { SearchRateFilmModule } from './search-rate-film/search-rate-film.module';
 import { ToplistModule } from './toplist/toplist.module';
 import { UserFormModule } from './user-form/user-form.module';
+import { SharedModule } from './shared/shared.module'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     SearchRateFilmModule,
     ToplistModule,
     UserFormModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
