@@ -1,14 +1,21 @@
 <div class="inputFormContainer">
     <div class="inputForm">
-        <span>Title</span>
-        name="" value="Name"
-        <input class="titleInput" type="text" value="avengers" (onkeyup)="filterList($event)" />
-        <span>Your name</span>
-        <input class="userNameInput" type="text" />
-        <input type="text" />
-        <input type="text" />
-        <span>Comment</span>
-        <textarea class="commentInputText" rows="8" cols="80"></textarea>
+        <form [formGroup]="groupPostMovie"
+        >
+            <div>
+                <label>Title</label>
+                <input class="titleInput" type="text" value=" " formControlName="searchByTitle" />
+            </div>
+            <div>
+                <label>Your name</label>
+                <input class="userNameInput" type="text" formControlName="yourName" />
+            </div>
+            <div>
+                <label>Comment</label>
+                <textarea class="commentInputText" formControlName="postComment"></textarea>
+            </div>
+        </form>
         <button type="button" (click)="addMovieComment()">hello</button>
+
     </div>
 </div>

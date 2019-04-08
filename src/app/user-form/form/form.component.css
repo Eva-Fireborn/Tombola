@@ -19,6 +19,8 @@ input {
 textarea {
     background-color: black;
     color: white;
+    height: 8em;
+    width: 50em;
 }
 button {
     width: 6em;
