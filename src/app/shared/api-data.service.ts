@@ -53,11 +53,9 @@ export class ApiDataService {
     } else if (valueA > valueB) {
       comparison = -1;
     }
-<<<<<<< HEAD
-
-    getSearchMovie(): Observable<Movie> {
-        return this.http.get<Movie>(this.formUrl);
+    return comparison;
     }
+
 
     getSearchMovieFromApi(searchString: string): Observable<Movie> | null {
         this.formUrl = `https://api.themoviedb.org/3/search/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&query=${searchString}`
@@ -69,9 +67,6 @@ export class ApiDataService {
         }
     }
 
-=======
-    return comparison;
-  }
 
   getMovie(): Observable<Movie> {
       return this.http.get<Movie>(this.toplistUrl);
@@ -87,5 +82,4 @@ export class ApiDataService {
     key: 'film2'}
   });
   }*/
->>>>>>> d21d5625c4f4d66ebc08baaeeabd0c469aa602f0
 }

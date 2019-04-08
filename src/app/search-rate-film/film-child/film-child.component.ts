@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ApiDataService } from '../../shared/api-data.service'
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./film-child.component.css']
 })
 export class FilmChildComponent implements OnInit {
-  @Input() selectedFilm; 
+  @Input() selectedFilm;
   @Output() onAction = new EventEmitter<any> ();
   voted: boolean= false;
   voteOnFilm(rating){
@@ -20,5 +21,5 @@ export class FilmChildComponent implements OnInit {
   ngOnInit() {
     this.voted=false;
   }
-  
+
 }
