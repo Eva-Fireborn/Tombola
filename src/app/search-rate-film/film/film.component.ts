@@ -26,6 +26,7 @@ export class FilmComponent implements OnInit {
     });
   }
   voteOnFilm(selectedFilm){
+    this.movieMix_ratings = this.movieMix_ratings.filter(film => film !== selectedFilm);
     this.apiData.updateMovieArray(selectedFilm)
   }
   selectFilm(listItem){

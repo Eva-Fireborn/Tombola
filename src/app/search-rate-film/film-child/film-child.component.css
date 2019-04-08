@@ -23,7 +23,7 @@
 .rating {
     unicode-bidi: bidi-override;
     direction: rtl;
-    width: 200px;
+    width: 400px;
     position: relative;
     margin-left: 170px;
 }
@@ -31,6 +31,8 @@
     display: inline-block;
     position: relative;
     width: 1.1em;
+    font-size: 2em;
+    color: goldenrod;
 }
 .rating > span:hover:before,
 .rating > span:hover ~ span:before  {
