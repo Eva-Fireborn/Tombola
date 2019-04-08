@@ -15,7 +15,7 @@
     text-indent: 280px;
   text-align: justify;
   letter-spacing: 3px;
-  font-family: Roboto Bold Italic;
+  font-family: "Roboto Bold Italic";
   color: crimson
   ;
   
@@ -41,33 +41,34 @@
   } 
   .containerp{
     display: grid;
-    grid-column-gap: 320px;
+    grid-column-gap: 50px;
     grid-template-columns: auto auto ;
     padding: 10px;  
-    margin-right: 90%;
+    margin-right: 22%;
     margin-left: 25%;
 
   } 
   .containern{
     display: grid;
-    grid-column-gap: 320px;
+    grid-column-gap: 50px;
     grid-template-columns: auto auto ;
     padding: 10px;  
-    margin-right: 90%;
+    margin-right: 22%;
     margin-left: 25%;
   } 
   p{
       color:#676666;
       letter-spacing: 3px;
       font-size: 18px;
-      font-family: Roboto Condensed Bold Italic
-      ;
+      font-family: "Roboto Condensed Bold Italic";
+      text-align: center;
+    
   }
   .text{
       color:#676666;
       font-size: 18px;
       padding:5px;
-      font-style:Roboto;
+      font-style:"Roboto";
       font-variant:initial;
       text-align:center;
 letter-spacing: 3px;
@@ -76,8 +77,29 @@ background-color:#ffffff;
 }
 .name{
     color:floralwhite;
-    font-style: bold;
+    font-style: "bold";
+    
 }
 .namea{
     color: floralwhite;
     }
+    summary{
+        outline: none;
+        
+        
+    }
+    summary::-webkit-details-marker {
+        display: none
+    }
+      
+    summary:after {
+        float: left; 
+        height: 10px;
+        width: 10px;
+        content: "+";
+    }
+      
+    details[open] summary:after {
+        content: "-";
+    }
+   
