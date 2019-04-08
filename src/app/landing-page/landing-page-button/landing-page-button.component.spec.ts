@@ -22,4 +22,5 @@ describe('LandingPageButtonComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });

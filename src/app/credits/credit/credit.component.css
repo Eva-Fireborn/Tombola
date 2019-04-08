@@ -1,3 +1,83 @@
+
 .Image {
     width: 300px;
+    
 }
+
+.line{
+    width: 65%;
+
+}
+.us{
+    color: whitesmoke;
+    font-size: 18px;
+    right: 30px;
+    text-indent: 280px;
+  text-align: justify;
+  letter-spacing: 3px;
+  font-family: Roboto Bold Italic;
+  color: crimson
+  ;
+  
+}
+
+.containera {
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto ;
+    padding: 10px;
+    margin-right: 22%;
+    margin-left: 25%;
+    
+  }
+  .container{
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto ;
+    padding: 10px;  
+    margin-right: 22%;
+    margin-left: 25%;
+    
+  } 
+  .containerp{
+    display: grid;
+    grid-column-gap: 320px;
+    grid-template-columns: auto auto ;
+    padding: 10px;  
+    margin-right: 90%;
+    margin-left: 25%;
+
+  } 
+  .containern{
+    display: grid;
+    grid-column-gap: 320px;
+    grid-template-columns: auto auto ;
+    padding: 10px;  
+    margin-right: 90%;
+    margin-left: 25%;
+  } 
+  p{
+      color:#676666;
+      letter-spacing: 3px;
+      font-size: 18px;
+      font-family: Roboto Condensed Bold Italic
+      ;
+  }
+  .text{
+      color:#676666;
+      font-size: 18px;
+      padding:5px;
+      font-style:Roboto;
+      font-variant:initial;
+      text-align:center;
+letter-spacing: 3px;
+background-color:#ffffff; 
+
+}
+.name{
+    color:floralwhite;
+    font-style: bold;
+}
+.namea{
+    color: floralwhite;
+    }
