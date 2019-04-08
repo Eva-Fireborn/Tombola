@@ -1,14 +1,6 @@
 <div class="jumbotron text-center">
 <h1>Movie-Mix</h1>
-</div>
-<div class="toplistMenu">
-  <div (click)="getApiToplist()" [class.active]="!switchBetweenPrivateAndTotalToplist">
-  <h3>Top rating på IMDB</h3>
-  </div>
-
-  <div (click)="getPersonalToplistFromLocalStorage()" [class.active]="switchBetweenPrivateAndTotalToplist">
-    <h3>Din totalt uniqa top 20 lista</h3>
-  </div>
+<h3>Din totalt uniqa top 20 lista</h3>
 </div>
 <!--<div *ngIf="movieMix_ratings.length === 0">
   <p>Du har inte lagt in några filmer ännu</p>
@@ -22,7 +14,7 @@
       <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png'/>
       <span>IMDB-score {{listItem.vote_average}}</span>
     </h3>
-    <div *ngIf="switchBetweenPrivateAndTotalToplist">
+    <div>
       <span>Ditt betyg: {{listItem.popularity}}</span>
     </div>
     <div class="row" id="movieStats">
