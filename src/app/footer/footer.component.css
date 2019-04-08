@@ -25,7 +25,7 @@ li {
 }
 li:hover {
     text-decoration: underline;
-    cursor: pointer; 
+    cursor: pointer;
 }
 .iconContainer {
     margin-top: 60px;

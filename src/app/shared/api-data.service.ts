@@ -11,6 +11,7 @@ export class ApiDataService {
   toplistUrl: string = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&page=1'
   discoverUrl: string = 'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
   private movieArray: Movie [] =[];
+  private recentlyAddedMovie: Movie [] =[];
   chosenMovie: string;
   formUrl: string = null;
 
@@ -30,6 +31,25 @@ export class ApiDataService {
       let tempJSON = JSON.stringify(this.movieArray)
       localStorage.setItem('movieArray', tempJSON)
     }
+  }
+
+  addNewMovieToArray(movie: Movie){
+      let isMovieInList: boolean = false;
+      for (let i= 0; i < this.recentlyAddedMovie.length; i++){
+        if(this.recentlyAddedMovie[i].title === movie.title){
+          this.recentlyAddedMovie[i].popularity = movie.popularity;
+          isMovieInList = true;
+        }
+      }
+      if (isMovieInList){
+        let tempJSON = JSON.stringify(this.recentlyAddedMovie)
+        localStorage.setItem('recentlyAddedMovie', tempJSON)
+      } else {
+        this.recentlyAddedMovie.push(movie)
+        let tempJSON = JSON.stringify(this.recentlyAddedMovie)
+        localStorage.setItem('recentlyAddedMovie', tempJSON)
+      }
+
   }
 
   constructor(http: HttpClient) {

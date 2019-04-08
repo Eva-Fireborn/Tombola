@@ -2,17 +2,13 @@
     <div class="inputForm">
         <form [formGroup]="groupPostMovie"
         >
-            <div>
+            <div >
                 <label>Title</label>
-                <input class="titleInput" type="text" value=" " formControlName="searchByTitle" />
-            </div>
-            <div>
-                <label>Your name</label>
-                <input class="userNameInput" type="text" formControlName="yourName" />
-            </div>
-            <div>
-                <label>Comment</label>
-                <textarea class="commentInputText" formControlName="postComment"></textarea>
+                <input class="titleInput" type="text" value=" " formControlName="searchByTitle"/>
+                <ul *ngFor="let movieSearched of movieSearch | slice: 0:5; let i = index " (click)="addMovieToMovie(i)">
+                    {{movieSearched.title}}
+
+                </ul>
             </div>
         </form>
         <button type="button" (click)="addMovieComment()">hello</button>

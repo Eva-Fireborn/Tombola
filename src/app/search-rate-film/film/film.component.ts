@@ -10,6 +10,7 @@ import { Movie } from '../../shared/movie';
 export class FilmComponent implements OnInit {
   movieMix_ratings: Movie [];
   selectedFilm: Movie;
+  recentlyAddedMovie: [] = []; 
   constructor(private apiData: ApiDataService) { }
 
   ngOnInit() {
@@ -23,7 +24,9 @@ export class FilmComponent implements OnInit {
         vote_average: obj.vote_average,
         popularity: obj.popularity = 0
       }));
-    });
+    })
+
+    this.recentlyAddedMovie = JSON.parse(localStorage.getItem('recentlyAddedMovie'))
   }
   voteOnFilm(selectedFilm){
     this.movieMix_ratings = this.movieMix_ratings.filter(film => film !== selectedFilm);

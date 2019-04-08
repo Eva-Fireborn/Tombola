@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { FormGroup, FormControl} from '@angular/forms'
+import { FormGroup, FormControl, AbstractControl} from '@angular/forms'
 import { ApiDataService } from 'src/app/shared/api-data.service';
 
 @Component({
@@ -10,14 +10,15 @@ import { ApiDataService } from 'src/app/shared/api-data.service';
 export class FormComponent implements OnInit {
     movieSearch: any[] = [];
     @Output() chosenMovie: string;
+    movieArray: any;
 
     constructor(private movieDataList: ApiDataService) {  }
 
     groupPostMovie = new FormGroup ({
         searchByTitle: new FormControl(''),
-        yourName: new FormControl(''),
-        postComment: new FormControl(''),
+
     });
+    searchByTitle: AbstractControl;
 
     ngOnInit() { this.onChanges(); }
 
@@ -33,25 +34,23 @@ export class FormComponent implements OnInit {
                         this.movieSearch = movielist.map(formObj => ({
                             title: formObj.title,
                             poster_path: formObj.poster_path,
+                            overview: formObj.overview,
+                            release_date: formObj.release_date,
+                            vote_average: formObj.vote_average,
+                            popularity: formObj.popularity = 0
                         }));
                         console.log('form-ngOnInit movieSearchList: ' , this.movieSearch)
                     })
 
-            } else {
-                return null
+                } else {
+                    return null
             }
         })
     }
+
+    addMovieToMovie(i) {
+        this.movieDataList.addNewMovieToArray(this.movieSearch[i])
+        // this.movieArray.push(this.movieSearch[i])
+        console.log(this.movieSearch[i]);
+    }
 }
-
-
-
-
-
-// this.searchByTitle = this.groupPostMovie.get('searchByTitle');
-// this.yourName = this.groupPostMovie.get('yourName');
-// this.postComment = this.groupPostMovie.get('postComment');
-
-// searchByTitle: AbstractControl;
-// yourName: AbstractControl;
-// postComment: AbstractControl;
