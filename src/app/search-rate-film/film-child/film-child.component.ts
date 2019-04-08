@@ -1,6 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ApiDataService } from '../../shared/api-data.service'
-
 
 @Component({
   selector: 'app-film-child',

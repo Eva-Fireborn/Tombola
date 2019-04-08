@@ -14,12 +14,7 @@ export class ToplistFilmsComponent implements OnInit {
 
 
   ngOnInit() {
-<<<<<<< HEAD
       this.movieMix_ratings = this.movieData.fetchMovieArray();
-
-=======
-    this.movieMix_ratings = this.movieData.fetchMovieArray();
->>>>>>> 9062c7ffdbcea87ee7c4da05f5f490d5efa294da
   }
 
 
