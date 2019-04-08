@@ -8,10 +8,12 @@ import { UserFormModule } from './user-form/user-form.module';
 import { SharedModule } from './shared/shared.module'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.container{
+  display: inline-flex
+}
+.filmContainer {
+  width: 320px;
+  height: 220px;
+  border: 2px solid black;
+  overflow: hidden;
+  margin: 20px;
+}
+.filmContainer:hover{
+  cursor: pointer;
+}
+h2 {
+  font-size: 1.2em;
+  margin: 0px;
+}
+h3 {
+  font-size: 0.8em;
+  margin: 0px;
+}
+.starRating{
+  height: 15px;
+}
+.moviePosters {
+  height: 200px;
+  float: left;
+  margin: 10px;
+}
+.movieInfo {
+  margin: 0px;
+}
