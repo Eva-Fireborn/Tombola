@@ -1,4 +1,6 @@
-
+.container {
+  color: white;
+}
 .col-sm-5 {
   padding: 0px;
 }

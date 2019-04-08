@@ -8,8 +8,9 @@ import { MovielistService } from '../../shared/movielist.service';
   styleUrls: ['./film.component.css']
 })
 export class FilmComponent implements OnInit {
-    moviesToRate: any[];
-    test = 'fas'
+  moviesToRate: any[];
+  ratedMovies: any[];
+
   constructor(
     private apiData: ApiDataService,
     private movieList:  MovielistService
@@ -17,22 +18,19 @@ export class FilmComponent implements OnInit {
 
   ngOnInit() {
     this.moviesToRate = this.movieList.getMoviesToRate()
-
-
-     // this.apiData.currentMovieArray.subscribe(moviesToRate => this.moviesToRate = moviesToRate)
+    this.ratedMovies = this.movieList.getRatedMovies()
   }
 
 
 
 
   buttonFunction(i, num){
-   this.moviesToRate[i].popularity += num
-   this.moviesToRate[i].numberOfVotes += 1
-   console.log(this.moviesToRate[i].popularity)
-   console.log(this.moviesToRate[i].numberOfVotes)
-   console.log(this.moviesToRate[i].title)
-   this.moviesToRate.splice(i, 1);
-
+    this.moviesToRate[i].totalScore += num
+    this.moviesToRate[i].numberOfVotes += 1
+    console.log('this is moviesToRate', this.moviesToRate[i].totalScore)
+    console.log('this is moviesToRate', this.moviesToRate[i].numberOfVotes)
+    this.ratedMovies.push(this.moviesToRate[i])
+    this.moviesToRate.splice(i, 1);
   }
 
 
