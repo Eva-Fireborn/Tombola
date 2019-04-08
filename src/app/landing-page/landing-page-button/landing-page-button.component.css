@@ -1,7 +1,7 @@
 
 .sasa{
   size: center;
-  background-color: crimson;
+  background-color: #e1e1e1;
   position: absolute;
   top: 61%;
   left: 45%;
@@ -14,6 +14,6 @@
   cursor: pointer;
   outline: none;
   letter-spacing: 3px;
-  border: 2px solid #2e2e2e;
+ /* border: 2px solid #2e2e2e;*/
   overflow: hidden;
 }
