@@ -1,6 +1,12 @@
 .inputFormContainer {
-    margin-top: 13em;
+    height: 27em;
     text-align: center;
+}
+.inputFormContainer:first-child {
+    margin-top: 10em;
+}
+.inputFormContainer:last-child {
+    margin-bottom: 6em;
 }
 .inputForm {
     display: inline-flex;
@@ -12,23 +18,38 @@ input {
     color: black;
     border-radius: 20px;
     border: none;
-    width: 50em;
-    height: 2em;
+    width: 70vw;
+    height: 4em;
     margin: 1em;
-}
-textarea {
-    background-color: white;
-    color: black;
-    height: 8em;
-    width: 50em;
-}
-button {
-    width: 6em;
-    height: 2em;
-    margin-left: 1em;
-    padding: 1.7em;
 }
 ul {
     background-color: white;
     color: black;
+    margin: 1px;
+    padding: 1em;
+}
+ul:nth-child(odd) {
+    background-color: #F5F5F5;
+}
+ul:hover {
+    cursor: pointer;
+}
+label {
+    color: white;
+}
+.addMovieImdb {
+    background-color: #EEF2FF;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+label {
+    color: black;
+}
+button {
+    border-radius: 20px;
+    height: 5em;
+    width: 15em;
+    margin-bottom: 1em;
+    outline: none;
 }

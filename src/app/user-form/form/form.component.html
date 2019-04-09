@@ -1,17 +1,42 @@
 <div class="inputFormContainer">
     <div class="inputForm">
-        <form [formGroup]="groupPostMovie"
-        >
-            <div >
+        <form [formGroup]="groupPostMovie">
+            <div class="addMovieImdb">
+                <h3>Add Movie from Imdb</h3>
                 <label>Title</label>
-                <input class="titleInput" type="text" value=" " formControlName="searchByTitle"/>
+                <input id="titleInput" type="text" value=" " formControlName="searchByTitle"/>
                 <ul *ngFor="let movieSearched of movieSearch | slice: 0:5; let i = index " (click)="addMovieToMovie(i)">
                     {{movieSearched.title}}
-
                 </ul>
             </div>
         </form>
-        <button type="button" (click)="addMovieComment()">hello</button>
+    </div>
+</div>
 
+<div class="inputFormContainer">
+    <div class="inputForm">
+        <form class=""
+         [formGroup]="addYourMovieGroup" >
+         <div class="addMovieImdb">
+
+            <h3>Add your Your Favorite movie</h3>
+            <label>Title</label>
+            <input class="yourTitle" value="" type="text" formControlName="yourTitle" />
+
+
+            <label>Relese date</label>
+            <input class="yourRealeseDay" value="" type="text"
+            formControlName="yourRealeseDay" />
+
+            <label>Overview</label>
+            <input class="yourOverview" value="" type="text"
+            formControlName="yourOverview" />
+
+            <label>Popularity</label>
+            <input class="yourPopularity" value="" type="text" formControlName="yourPopularity" />
+            <button type="button" (click)="uploadMovie()">
+                Upload your Movie </button>
+        </div>
+        </form>
     </div>
 </div>
