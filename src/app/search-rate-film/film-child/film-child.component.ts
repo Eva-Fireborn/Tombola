@@ -9,16 +9,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class FilmChildComponent implements OnInit {
   @Input() selectedFilm; 
   @Output() onAction = new EventEmitter<any> ();
-  voted: boolean= false;
+  @Output() selectedFilmToNull = new EventEmitter<any> ();
+
   voteOnFilm(rating){
-    this.voted=true;
     this.selectedFilm.popularity = rating;
     this.onAction.emit(this.selectedFilm)
   }
   constructor() { }
-
+  setSelectedFilmToNull(){
+    this.selectedFilmToNull.emit(null);
+  }
   ngOnInit() {
-    this.voted=false;
   }
   
 }

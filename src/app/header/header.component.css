@@ -9,7 +9,7 @@
     grid-template-columns: auto auto auto auto auto ; 
     margin-left: 47%;
     letter-spacing: 1px;
-    font-family: "Roboto" ;
+    font-family: 'Roboto', sans-serif;
     font-size: 12px;
     text-align-last: center;
     

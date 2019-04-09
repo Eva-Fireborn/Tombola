@@ -73,15 +73,20 @@
       text-align:center;
 letter-spacing: 3px;
 background-color:#ffffff; 
+font-family: 'Roboto', sans-serif;
 
 }
 .name{
     color:floralwhite;
     font-style: "bold";
+    font-family: 'Roboto', sans-serif;
+
     
 }
 .namea{
     color: floralwhite;
+    font-family: 'Roboto', sans-serif;
+
     }
     summary{
         outline: none;
