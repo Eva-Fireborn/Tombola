@@ -1,22 +1,19 @@
-<app-film-child [selectedFilm]="selectedFilm" (onAction)="voteOnFilm(selectedFilm)"></app-film-child>
-<div
-    *ngFor="let listItem of recentlyAddedMovie"
-    (click)="selectFilm(listItem)">
-    <div class="filmContainer">
-        <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
 
-      <h2>{{listItem.title}}</h2>
-      <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
-      <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
-      <p class="movieInfo">Klicka för mer info</p>
-    </div>
+<app-film-child [selectedFilm]="selectedFilm" (onAction)="voteOnFilm(selectedFilm)" (selectedFilmToNull)="setSelectedFilmToNull()"></app-film-child>
+<div class="container">
+  <div class="sortBy">
+    <form name="sortBy" (click)="sortByValueFunction($event)">
+        <input type="radio" name="sortBy" value="a-z" > Alfabetiskt
+        <input type="radio" name="sortBy" value="score"> Betyg
+        <input type="radio" name="sortBy" value="over8"> Enbart filmer med betyg över 8
+        <input type="radio" name="sortBy" value="dateNew"> Nyast först
+        <input type="radio" name="sortBy" value="dateOld"> Äldst först
+        <input type="radio" name="sortBy" value="original"> Visa originalet
+    </form>
+  </div>
+  <div class="filmContainer" *ngFor="let listItem of movieMix_ratings"
 
-
-</div>
-<div class="container"
-  *ngFor="let listItem of movieMix_ratings"
   (click)="selectFilm(listItem)">
-  <div class="filmContainer">
       <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
 
     <h2>{{listItem.title}}</h2>

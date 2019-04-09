@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CreditsModule } from './credits/credits.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { SearchRateFilmModule } from './search-rate-film/search-rate-film.module';
@@ -28,7 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms'
     UserFormModule,
     AppRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

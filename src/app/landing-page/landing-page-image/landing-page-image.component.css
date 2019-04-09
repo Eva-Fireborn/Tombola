@@ -4,7 +4,7 @@
 
 p {
     position: relative;
-    font-family: roboto;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-size: 1.8em;
     letter-spacing: 4px;
