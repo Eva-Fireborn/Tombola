@@ -128,5 +128,7 @@ export class FilmComponent implements OnInit {
       comparison = -1;
     }
     return comparison;
+  }  changeColor(i) {
+
   }
 }

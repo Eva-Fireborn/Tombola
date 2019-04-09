@@ -11,7 +11,10 @@
         <input type="radio" name="sortBy" value="original"> Visa originalet
     </form>
   </div>
-  <div class="filmContainer" *ngFor="let listItem of movieMix_ratings"
+  <div
+  class="filmContainer"
+  *ngFor="let listItem of movieMix_ratings let i = index"
+  
 
   (click)="selectFilm(listItem)">
       <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">

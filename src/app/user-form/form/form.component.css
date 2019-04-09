@@ -29,7 +29,7 @@ ul {
     padding: 1em;
 }
 ul:nth-child(odd) {
-    background-color: #F5F5F5;
+    /* background-color: #F5F5F5; */
 }
 ul:hover {
     cursor: pointer;
@@ -52,4 +52,9 @@ button {
     width: 15em;
     margin-bottom: 1em;
     outline: none;
+}
+
+.active {
+  background-color: green;
+
 }

@@ -1,30 +1,13 @@
-<div class="jumbotron text-center">
-<h1>Movie-Mix</h1>
-<h3>Din totalt uniqa top 10 lista</h3>
+<div class="headerText">
+<h1>MovieMix Toplistan</h1>
 </div>
-<!--<div *ngIf="movieMix_ratings.length === 0">
-  <p>Du har inte lagt in några filmer ännu</p>
-</div>-->
-<div class="container"
-  *ngFor="let listItem of movieMix_ratings | slice: 0:10;">
-<div class="row" style="border: 1px solid black;">
-  <div class="col-sm-7">
-    <h1 class="movieTitle">{{listItem.title}}</h1>
-    <h3>{{listItem.release_date}}
-      <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png'/>
-      <span>IMDB-score {{listItem.vote_average}}</span>
-    </h3>
-    <div>
-      <span>Ditt betyg: {{listItem.popularity}}</span>
-    </div>
-    <div class="row" id="movieStats">
-      <div class="col-sm-5">
-              <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="x">
-      </div>
-      <div class="col-sm-7">
-          <p class="movieInfo">{{listItem.overview}}</p>
-      </div>
-    </div>
-   </div>
+
+<div class="container">
+  <div class="filmContainer" *ngFor="let listItem of movieMix_ratings">
+      <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
+    <h2>{{listItem.title}}</h2>
+    <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
+    <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
+      <br><p>Your vote: {{listItem.popularity}}</p>
   </div>
 </div>
