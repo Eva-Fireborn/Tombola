@@ -1,4 +1,7 @@
 <div class="selectedContainer" *ngIf="selectedFilm">
+  <div class="xRemoveIcon">
+      <img src="../../../assets/images/icon.png" alt="Tryck ner fönster" (click)="setSelectedFilmToNull()"/>
+  </div>
   <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{selectedFilm.poster_path}}" alt="Filmposter">
   <div class="innerConatiner">
     <h2>{{selectedFilm.title}}</h2>
@@ -8,9 +11,6 @@
     <div class="rating">
       <span (click)="voteOnFilm(rating = 10)">☆</span><span (click)="voteOnFilm(rating = 9)">☆</span><span (click)="voteOnFilm(rating = 8)">☆</span><span (click)="voteOnFilm(rating = 7)">☆</span><span (click)="voteOnFilm(rating = 6)">☆</span><span (click)="voteOnFilm(rating = 5)">☆</span><span (click)="voteOnFilm(rating = 4)" >☆</span><span (click)="voteOnFilm(rating = 3)">☆</span><span (click)="voteOnFilm(rating = 2)">☆</span><span (click)="voteOnFilm(rating = 1)">☆</span>
       <p>Ge ditt betyg</p>
-    </div>
-    <div *ngIf="voted" class="voted">
-      Filmen och ditt betyg ligger nu på din lista. Du kan när du vill ge filmen ett nytt betyg.
     </div>
   </div>
 </div>

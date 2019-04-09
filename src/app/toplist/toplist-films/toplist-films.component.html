@@ -1,12 +1,12 @@
 <div class="jumbotron text-center">
 <h1>Movie-Mix</h1>
-<h3>Din totalt uniqa top 20 lista</h3>
+<h3>Din totalt uniqa top 10 lista</h3>
 </div>
 <!--<div *ngIf="movieMix_ratings.length === 0">
   <p>Du har inte lagt in några filmer ännu</p>
 </div>-->
 <div class="container"
-  *ngFor="let listItem of movieMix_ratings; let i = index">
+  *ngFor="let listItem of movieMix_ratings | slice: 0:10;">
 <div class="row" style="border: 1px solid black;">
   <div class="col-sm-7">
     <h1 class="movieTitle">{{listItem.title}}</h1>
@@ -26,19 +26,5 @@
       </div>
     </div>
    </div>
-    <div class="col-sm-5" hidden="true">
-    <div class="jumbotron text-center"><h2>More content:</h2></div><br><br>
-
-    <p class="movieInfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-       qui officia deserunt mollit anim id est laborum.</p>
-
-  </div>
-
-
   </div>
 </div>
