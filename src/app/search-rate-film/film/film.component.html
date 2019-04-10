@@ -1,38 +1,40 @@
 
 <app-film-child [selectedFilm]="selectedFilm" (onAction)="voteOnFilm(selectedFilm)" (selectedFilmToNull)="setSelectedFilmToNull()"></app-film-child>
 <div class="container">
-  <div class="sortBy">
-    <form name="sortBy" (click)="sortByValueFunction($event)">
-        <input type="radio" name="sortBy" value="a-z" > <span>A-Z</span>
-        <input type="radio" name="sortBy" value="score"> <span>Highest score</span>
-        <input type="radio" name="sortBy" value="dateNew"> <span>Newest releases</span>
-        <input type="radio" name="sortBy" value="dateOld"> <span>Oldest releases</span>
-        <input type="radio" name="sortBy" value="over8"> <span>Only movies with a score above 8</span>
-       <hr>
-         Give me 20 random movies to rate, NOW! <button (click)="shuffleRandomMovies()" type="button" name="button">Shuffle</button>
-    </form>
-  </div>
 
-
-  <div class="filmContainer" *ngFor="let addedMoviesImdb of recentlyAddedMovie" 
-      (click)="selectFilm(listItem)">
+  <div class="filmContainer">
+    <h1>The movies that you added</h1>
+    <div class="film" *ngFor="let addedMoviesImdb of recentlyAddedMovie" 
+      (click)="selectFilm(addedMoviesImdb)">
       <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{addedMoviesImdb.poster_path}}" alt="Filmposter">
-
       <h2>{{addedMoviesImdb.title}}</h2>
       <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{addedMoviesImdb.vote_average}}</span></h3>
       <p class="movieReleaseDate">Release: {{addedMoviesImdb.release_date}}</p>
-      <p class="movieInfo">Klicka för mer info</p>
+      <p class="movieInfo">Click for more info.</p>
+    </div>
   </div>
 
-
-
-<div class="filmContainer"
-*ngFor="let listItem of movieMix_ratings let i = index" (click)="selectFilm(listItem)">
-    <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
-    <h2>{{listItem.title}}</h2>
-    <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
-    <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
-    <p class="movieInfo">Click for more info.</p>
+  <div class="filmContainer">
+      <h1>Discover new movies</h1>
+      <div class="sortBy">
+          <form name="sortBy" (click)="sortByValueFunction($event)">
+              <input type="radio" name="sortBy" value="a-z" > <span>A-Z</span>
+              <input type="radio" name="sortBy" value="score"> <span>Highest score</span>
+              <input type="radio" name="sortBy" value="dateNew"> <span>Newest releases</span>
+              <input type="radio" name="sortBy" value="dateOld"> <span>Oldest releases</span>
+              <input type="radio" name="sortBy" value="over8"> <span>Only movies with a score above 8</span>
+             <hr>
+               Give me 20 random movies to rate, NOW! <button (click)="shuffleRandomMovies()" type="button" name="button">Shuffle</button>
+          </form>
+        </div>
+    <div class="film" *ngFor="let listItem of movieMix_ratings let i = index" (click)="selectFilm(listItem)">
+      <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
+      <h2>{{listItem.title}}</h2>
+      <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
+      <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
+      <p class="movieInfo">Click for more info.</p>
+    </div>
+  </div>
 </div>
 
 

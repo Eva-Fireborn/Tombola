@@ -10,7 +10,7 @@ import { Movie } from '../../shared/movie';
 export class FilmComponent implements OnInit {
   movieMix_ratings: Movie [];
   selectedFilm: Movie;
-  recentlyAddedMovie: [] = [];
+  recentlyAddedMovie: Movie [] = [];
   indexForMovieList = 0;
 
   constructor(private apiData: ApiDataService) { }
@@ -43,10 +43,13 @@ export class FilmComponent implements OnInit {
       index = 0;
     }
     this.selectedFilm = this.movieMix_ratings[index];
+    this.recentlyAddedMovie = this.recentlyAddedMovie.filter(movie => movie !== selectedFilm)
+    
   }
   selectFilm(listItem){
     this.selectedFilm = listItem;
     window.scrollTo(0,0);
+    
   }
   setSelectedFilmToNull(){
     this.selectedFilm = null;
