@@ -18,6 +18,10 @@
 max-width: 25em;
 height: 25em;
 }
+.moviePosters404 {
+max-width: 16em;
+height: auto;
+}
 
 .movieTitle {
   width: auto;
@@ -38,7 +42,7 @@ height: 25em;
 }
 .row {
   margin: 1em;
-  
+
 }.active {
   background-color: black;
   color: white;

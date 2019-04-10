@@ -17,9 +17,18 @@
     <div>
       <span>Ditt betyg: {{listItem.popularity}}</span>
     </div>
-    <div class="row" id="movieStats">
+    <div class="row" id="movieStats" *ngIf="listItem.poster_path">
       <div class="col-sm-5">
               <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="x">
+      </div>
+      <div class="col-sm-7">
+          <p class="movieInfo">{{listItem.overview}}</p>
+      </div>
+    </div>
+
+    <div class="row" id="movieStats" *ngIf="!listItem.poster_path">
+      <div class="col-sm-5">
+              <img class="moviePosters404" src="assets/images/404Movie.png" alt="xoxo">
       </div>
       <div class="col-sm-7">
           <p class="movieInfo">{{listItem.overview}}</p>

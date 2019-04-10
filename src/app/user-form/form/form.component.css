@@ -21,6 +21,7 @@ input {
     width: 70vw;
     height: 4em;
     margin: 1em;
+    outline: none;
 }
 ul {
     background-color: white;
@@ -52,4 +53,13 @@ button {
     width: 15em;
     margin-bottom: 1em;
     outline: none;
+}
+.valid {
+    border: solid yellow 2px;
+}
+.invalid {
+    border: solid red 2px;
+}
+.errorMessage {
+
 }

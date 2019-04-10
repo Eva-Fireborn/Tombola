@@ -1,6 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, Validators} from '@angular/forms'
 import { ApiDataService } from 'src/app/shared/api-data.service';
+// import { Movie } from '../../shared/movie;'
+
 
 @Component({
   selector: 'app-form',
@@ -26,12 +28,13 @@ export class FormComponent implements OnInit {
     });
 
     addYourMovieGroup = new FormGroup ({
-        yourTitle: new FormControl('', [Validators.required]),
-        yourRealeseDay: new FormControl('', [Validators.required]),
-        yourOverview: new FormControl('', [Validators.required]),
-        yourPopularity: new FormControl('', [Validators.required]),
+        yourTitle: new FormControl('', [Validators.required, Validators.minLength(2)] ),
+        yourRealeseDay: new FormControl('', [Validators.required, Validators.pattern('[0-9]{4}-[0-9]{2}-[0-9]{2}')]),
+        yourOverview: new FormControl('', [Validators.required, Validators.minLength(10)]),
+        yourPopularity: new FormControl('', [Validators.required, Validators.min(1), Validators.max(10), Validators.pattern('[0-9]*')]),
 
     });
+
 
     ngOnInit() { this.onChanges();
 
@@ -79,14 +82,12 @@ export class FormComponent implements OnInit {
         let newPopularity = this.addYourMovieGroup.get('yourPopularity').value;
         let popuarityObj = {popularity: newPopularity}
 
-        let newMovieObj = this.usersList.push(Object.assign(titleObj, realsedayObj, overviewObj, popuarityObj))
+        let newPoster = {poster_path: null}
+        let newVote = {vote_average: null}
 
-        console.log('usersList: ', this.usersList);
+        let newMovieObj = (Object.assign(titleObj, realsedayObj, overviewObj, popuarityObj, newVote, newPoster ))
 
-        // this.addMovieToMovie(newMovieObj)
-
-        // console.log('uploadMovie: ', newTitle, newRealeseDay, newOvewrview, newPopularity);
-        // console.log('uploadMovie: ', titleObj, realsedayObj, overviewObj, popuarityObj);
+        this.movieDataList.updateMovieArray(newMovieObj)
 
 }
     addMovieToMovie(movieIndex: any) {

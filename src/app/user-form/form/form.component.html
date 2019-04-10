@@ -21,20 +21,50 @@
 
             <h3>Add your Your Favorite movie</h3>
             <label>Title</label>
-            <input class="yourTitle" value="" type="text" formControlName="yourTitle" />
+            <input class="yourTitle" value="" placeholder="Title" type="text" formControlName="yourTitle"
+            [class.valid]="yourTitle.valid && (yourTitle.touched || yourTitle.dirty)"
+            [class.invalid]="yourTitle.invalid && (yourTitle.touched || yourTitle.dirty)"/>
+
+            <div class="errorMessage" *ngIf="(yourTitle.errors?.required || yourTitle.errors?.minlength) && yourTitle.touched">
+			You have to enter at least 2 letters
+		</div>
 
 
-            <label>Relese date</label>
-            <input class="yourRealeseDay" value="" type="text"
-            formControlName="yourRealeseDay" />
+            <label>Release date</label>
+            <input class="yourRealeseDay" value="" placeholder="yyyy-mm-dd" type="text"
+            formControlName="yourRealeseDay"
+            [class.valid]="yourRealeseDay.valid && (yourRealeseDay.touched || yourRealeseDay.dirty)"
+            [class.invalid]="yourRealeseDay.invalid && (yourRealeseDay.touched || yourRealeseDay.dirty)"
+            />
+
+            <div class="errorMessage" *ngIf="(yourRealeseDay.errors?.required || yourRealeseDay.errors?.pattern) && yourRealeseDay.touched">
+			Valid date is yyyy-mm-dd
+		</div>
 
             <label>Overview</label>
-            <input class="yourOverview" value="" type="text"
-            formControlName="yourOverview" />
+            <input class="yourOverview" value="" placeholder="Overview" type="text"
+            formControlName="yourOverview"
+            [class.valid]="yourOverview.valid && (yourOverview.touched || yourOverview.dirty)"
+            [class.invalid]="yourOverview.invalid && (yourOverview.touched || yourOverview.dirty)"
+            />
 
-            <label>Popularity</label>
-            <input class="yourPopularity" value="" type="text" formControlName="yourPopularity" />
-            <button type="button" (click)="uploadMovie()">
+            <div class="errorMessage" *ngIf="(yourOverview.errors?.required || yourOverview.errors?.minlength) && yourOverview.touched">
+			You have to enter at least 10 letters
+		</div>
+
+            <label>Rating</label>
+            <input class="yourPopularity" value="" placeholder="Rating" type="text" formControlName="yourPopularity"
+            [class.valid]="yourPopularity.valid && (yourPopularity.touched || yourPopularity.dirty)"
+            [class.invalid]="yourPopularity.invalid && (yourPopularity.touched || yourPopularity.dirty)"
+             />
+
+
+            <div class="errorMessage" *ngIf="(yourPopularity.errors?.required || yourPopularity.errors?.minlength || yourPopularity.errors?.maxlength) && yourPopularity.touched">
+			Write a number between 1 and 10!!
+		</div>
+
+
+            <button type="button" [disabled]="addYourMovieGroup.invalid" (click)="uploadMovie()">
                 Upload your Movie </button>
         </div>
         </form>
