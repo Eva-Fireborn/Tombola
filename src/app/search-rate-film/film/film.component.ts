@@ -44,6 +44,8 @@ export class FilmComponent implements OnInit {
     }
     this.selectedFilm = this.movieMix_ratings[index];
     this.recentlyAddedMovie = this.recentlyAddedMovie.filter(movie => movie !== selectedFilm)
+    let tempJSON = JSON.stringify(this.recentlyAddedMovie);
+    localStorage.setItem('recentlyAddedMovie', tempJSON);
     
   }
   selectFilm(listItem){
