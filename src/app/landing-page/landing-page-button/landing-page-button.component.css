@@ -1,20 +1,18 @@
 
 .sasa{
   size: center;
-  background-color: crimson;
+  background-color: 	#ffffff;
   position: absolute;
   top: 61%;
   left: 45%;
-  font-weight: bold;
   z-index: 2;
   width: 15%;
   padding: 20px;
-  text-align: center;
   border-radius: 13px;
-  cursor: pointer;
   outline: none;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   border: 2px solid #2e2e2e;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
+  font-size: 14px ;
 }

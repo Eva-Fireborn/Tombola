@@ -14,36 +14,41 @@
     justify-content: center;
 }
 input {
-    background-color: white;
-    color: black;
-    border-radius: 20px;
+    background-color: rgb(0,0,0,0.2);
+    color:black;
+    border-radius: 17px;
     border: none;
     width: 70vw;
     height: 4em;
     margin: 1em;
     outline: none;
+    font-size: 11p;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: "Roboto";
 }
 ul {
-    background-color: white;
+    background-color: rgb(0,0,0,0.2);
     color: black;
     margin: 1px;
     padding: 1em;
 }
 ul:nth-child(odd) {
-    /* background-color: #F5F5F5; */
+    background-color: #ffffff;
 }
 ul:hover {
     cursor: pointer;
 }
 label {
-    color: white;
+    color: black;
 }
 .addMovieImdb {
-    background-color: #EEF2FF;
+    background-color: #ffffff;
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 3em;
+    letter-spacing: 1px;
+    font-family: "Roboto";
 }
 label {
     color: black;
@@ -54,6 +59,12 @@ button {
     width: 15em;
     margin-bottom: 1em;
     outline: none;
+    border: 2px solid #2e2e2e;
+    background-color:#676666;
+    color: #ffffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-family: "Roboto";
 }
 .valid {
     border: solid green 2px;

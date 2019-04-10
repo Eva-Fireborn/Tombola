@@ -7,17 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingPageButtonComponent implements OnInit {
 
-  onCLick() {
-    console.log('Du har klickat på mig');
-  }
-
   constructor() {
     
     
   }
 
   ngOnInit() {
-  
-    
+     
   }
 }

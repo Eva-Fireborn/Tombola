@@ -3,10 +3,8 @@
 </div>
 
 <div class="container">
- <div class="filmContainer" *ngFor="let listItem of movieMix_ratings">
-     <!-- <div *ngIf="listItem.poster_path"> -->
+  <div class="filmContainer" *ngFor="let listItem of movieMix_ratings">
      <img *ngIf="listItem.poster_path" class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
-     <!-- </div> -->
      <div *ngIf="!listItem.poster_path">
                <img class="moviePosters404" src="assets/images/404Movie.png" alt="xoxo">
        </div>
@@ -14,6 +12,5 @@
    <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
    <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
      <br><p>Your vote: {{listItem.popularity}}</p>
-
-</div>
+  </div>
 </div>
