@@ -2,9 +2,9 @@
     <div class="inputForm">
         <form [formGroup]="groupPostMovie">
             <div class="addMovieImdb">
-                <h3>Add Movie from Imdb</h3>
+                <h3>Add a movie to your rating library </h3>
                 <label>Title</label>
-                <input id="titleInput" type="text" value=" " formControlName="searchByTitle"/>
+                <input id="titleInput" type="text" value=" " placeholder="Please enter movie title" formControlName="searchByTitle"/>
                 <ul id="titleList"*ngFor="let movieSearched of movieSearch | slice: 0:5; let i = index " (click)="addMovieToMovie(i)"
                 [ngClass]="{'active': selectedIdx == i}">
                     {{movieSearched.title}}
@@ -21,9 +21,9 @@
          [formGroup]="addYourMovieGroup" >
          <div class="addMovieImdb">
 
-            <h3>Add your Your Favorite movie</h3>
+            <h3>Freelance movieMaker? Add your own indie-film below</h3>
             <label>Title</label>
-            <input class="yourTitle" value="" placeholder="Title" type="text" formControlName="yourTitle"
+            <input class="yourTitle" value="" placeholder="Enter the movie title: Atleast 2 characters" type="text" formControlName="yourTitle"
             [class.valid]="yourTitle.valid && (yourTitle.touched || yourTitle.dirty)"
             [class.invalid]="yourTitle.invalid && (yourTitle.touched || yourTitle.dirty)"/>
 
@@ -33,7 +33,7 @@
 
 
             <label>Release date</label>
-            <input class="yourRealeseDay" value="" placeholder="yyyy-mm-dd" type="text"
+            <input class="yourRealeseDay" value="" placeholder="Enter the movie production date: yyyy-mm-dd" type="text"
             formControlName="yourRealeseDay"
             [class.valid]="yourRealeseDay.valid && (yourRealeseDay.touched || yourRealeseDay.dirty)"
             [class.invalid]="yourRealeseDay.invalid && (yourRealeseDay.touched || yourRealeseDay.dirty)"
@@ -43,8 +43,8 @@
 			Valid date is yyyy-mm-dd
 		</div>
 
-            <label>Overview</label>
-            <input class="yourOverview" value="" placeholder="Overview" type="text"
+            <label>Plot</label>
+            <input class="yourOverview" value="" placeholder="Enter the movie plot: 10 or more letters" type="text"
             formControlName="yourOverview"
             [class.valid]="yourOverview.valid && (yourOverview.touched || yourOverview.dirty)"
             [class.invalid]="yourOverview.invalid && (yourOverview.touched || yourOverview.dirty)"
@@ -55,7 +55,7 @@
 		</div>
 
             <label>Rating</label>
-            <input class="yourPopularity" value="" placeholder="Rating" type="text" formControlName="yourPopularity"
+            <input class="yourPopularity" value="" placeholder="Feed your own ego, rate your own movie: 1-10" type="text" formControlName="yourPopularity"
             [class.valid]="yourPopularity.valid && (yourPopularity.touched || yourPopularity.dirty)"
             [class.invalid]="yourPopularity.invalid && (yourPopularity.touched || yourPopularity.dirty)"
              />
@@ -64,7 +64,7 @@
             <div class="errorMessage" *ngIf="(yourPopularity.errors?.required || yourPopularity.errors?.minlength || yourPopularity.errors?.maxlength) && yourPopularity.touched">
 			Write a number between 1 and 10!!
 		</div>
-    
+
       <button type="button" [disabled]="addYourMovieGroup.invalid" (click)="uploadMovie()">
                   Upload your Movie </button><p class="test">{{msgWhenMovieAdded}}</p>
 

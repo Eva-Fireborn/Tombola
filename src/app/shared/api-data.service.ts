@@ -108,12 +108,5 @@ export class ApiDataService {
   getDiscoverList(indexForMovieList): Observable<Movie> {
     return this.http.get<Movie>(this.discoverUrl[indexForMovieList]);
   }
-  /*	getCat(): Observable<any> {
-  console.log(this.JSONmovie)
-  return this.http.get<any>(this.url, {params:
-    { op: 'get',
-    group: 'F9648',
-    key: 'film2'}
-  });
-  }*/
+
 }
