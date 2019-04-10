@@ -2,7 +2,10 @@
     width: 300px;
     
 }
-
+.routed {
+  color: white;
+  background-color: #676666;
+ }
 .containerheder{
     display: grid;
     grid-column-gap: 1px;
