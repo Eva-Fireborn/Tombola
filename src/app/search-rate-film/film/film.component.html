@@ -13,9 +13,22 @@
          Give me 20 random movies to rate, NOW! <button (click)="shuffleRandomMovies()" type="button" name="button">Shuffle</button>
     </form>
   </div>
-  <div
-  class="filmContainer"
-  *ngFor="let listItem of movieMix_ratings let i = index"
+  <div class="filmContainer" *ngFor="let addedMoviesImdb of recentlyAddedMovie"
+
+      (click)="selectFilm(listItem)">
+      <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{addedMoviesImdb.poster_path}}" alt="Filmposter">
+
+      <h2>{{addedMoviesImdb.title}}</h2>
+      <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{addedMoviesImdb.vote_average}}</span></h3>
+      <p class="movieReleaseDate">Release: {{addedMoviesImdb.release_date}}</p>
+      <p class="movieInfo">Klicka för mer info</p>
+  </div>
+
+  <!-- <div class="filmContainer" *ngFor="let listItem of movieMix_ratings" -->
+
+<div
+class="filmContainer"
+*ngFor="let listItem of movieMix_ratings let i = index"
   (click)="selectFilm(listItem)">
       <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
 
@@ -24,4 +37,8 @@
     <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
     <p class="movieInfo">Klicka för mer info</p>
   </div>
+
+
+
+
 </div>

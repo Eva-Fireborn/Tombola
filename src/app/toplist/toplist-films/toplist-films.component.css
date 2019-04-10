@@ -1,14 +1,14 @@
 .container{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-top: 20px;
-  margin-left: 20px;
-  font-family: 'Roboto', sans-serif;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ margin-top: 20px;
+ margin-left: 20px;
+ font-family: 'Roboto', sans-serif;
 }
 .sortBy {
-  width: 100%;
-  background-color: whitesmoke;
+ width: 100%;
+ background-color: whitesmoke;
 }
 .filmContainer {
   width: 320px;
@@ -20,18 +20,24 @@
 }
 
 h2 {
-  font-size: 1.2em;
-  margin: 0px;
+ font-size: 1.2em;
+ margin: 0px;
 }
 h3 {
-  font-size: 0.8em;
-  margin: 0px;
+ font-size: 0.8em;
+ margin: 0px;
 }
 .starRating{
-  height: 15px;
+ height: 15px;
 }
 .moviePosters {
-  height: 200px;
-  float: left;
-  margin: 10px;
+ height: 200px;
+ float: left;
+ margin: 10px;
+}
+.moviePosters404 {
+    height: 200px;
+    width: 150px;
+    float: left;
+    margin: 10px;
 }
