@@ -3,7 +3,14 @@
     width: 200px;
     padding: 30px;
 }
+a {
+    color: whitesmoke;
+    text-decoration: none;
 
+}
+a:hover {
+    text-decoration: underline;
+}
 .line{
     width: 65%;
 
@@ -84,6 +91,12 @@ font-family: 'Roboto', sans-serif
     font-family: 'Roboto', sans-serif;
     
     
+}
+.name:hover {
+    cursor: pointer;
+}
+.namea:hover {
+    cursor: pointer;
 }
 .namea{
     color: floralwhite;

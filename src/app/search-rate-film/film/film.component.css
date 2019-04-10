@@ -41,3 +41,9 @@ h3 {
 .movieInfo {
   margin: 0px;
 }
+span {
+  margin-right: 30px;
+}
+.filmContainer:hover {
+  transform: scale(1.1)
+}

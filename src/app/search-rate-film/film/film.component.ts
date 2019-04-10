@@ -9,15 +9,14 @@ import { Movie } from '../../shared/movie';
 })
 export class FilmComponent implements OnInit {
   movieMix_ratings: Movie [];
-  originalList: Movie [];
   selectedFilm: Movie;
   recentlyAddedMovie: [] = [];
-
+  indexForMovieList = 0;
 
   constructor(private apiData: ApiDataService) { }
 
   ngOnInit() {
-    this.apiData.getDiscoverList().subscribe(movieInformation => {
+    this.apiData.getDiscoverList(this.indexForMovieList).subscribe(movieInformation => {
       let movieInfo = movieInformation.results;
       this.movieMix_ratings = movieInfo.map( obj => ({
         title: obj.title,
@@ -31,21 +30,8 @@ export class FilmComponent implements OnInit {
     })
 
     this.recentlyAddedMovie = JSON.parse(localStorage.getItem('recentlyAddedMovie'))
-
-
-    this.apiData.getDiscoverList().subscribe(movieInformation => {
-      let movieInfo = movieInformation.results;
-      this.originalList = movieInfo.map( obj => ({
-        title: obj.title,
-        poster_path: obj.poster_path,
-        overview: obj.overview,
-        release_date: obj.release_date,
-        vote_average: obj.vote_average,
-        popularity: obj.popularity = 0
-      }));
-    });
-
   }
+  
   voteOnFilm(selectedFilm){
     this.apiData.updateMovieArray(selectedFilm)
     let index: number;
@@ -71,8 +57,6 @@ export class FilmComponent implements OnInit {
       this.movieMix_ratings.sort(this.sortMovieArrayByLetters);
     } else if (sortByValue === 'score'){
       this.movieMix_ratings.sort(this.sortMovieArrayByPopularity);
-    } else if (sortByValue === 'original'){
-      this.movieMix_ratings = this.originalList;
     } else if (sortByValue === 'over8'){
       this.movieMix_ratings = this.movieMix_ratings.filter(movie => movie.vote_average > 8);
     } else if (sortByValue === 'dateNew'){
@@ -128,5 +112,20 @@ export class FilmComponent implements OnInit {
       comparison = -1;
     }
     return comparison;
+  }
+  shuffleRandomMovies() {
+    this.indexForMovieList = Math.floor(Math.random() * Math.floor(12));
+    this.apiData.getDiscoverList(this.indexForMovieList).subscribe(movieInformation => {
+      let movieInfo = movieInformation.results;
+      this.movieMix_ratings = movieInfo.map( obj => ({
+        title: obj.title,
+        poster_path: obj.poster_path,
+        overview: obj.overview,
+        release_date: obj.release_date,
+        vote_average: obj.vote_average,
+        popularity: obj.popularity = 0
+      }));
+
+    })
   }
 }
