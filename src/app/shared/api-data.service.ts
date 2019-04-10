@@ -10,8 +10,10 @@ export class ApiDataService {
   http: HttpClient = null;
   toplistUrl: string = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&page=1'
   discoverUrl: string = 'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
-  private movieArray: Movie [] =[]; 
-
+  private movieArray: Movie [] =[];
+  private recentlyAddedMovie: Movie [] =[];
+  chosenMovie: string;
+  formUrl: string = null;
 
   updateMovieArray(movie: Movie) {
     let isMovieInList: boolean = false;
@@ -30,9 +32,28 @@ export class ApiDataService {
       localStorage.setItem('movieArray', tempJSON)
     }
   }
-  
-  constructor(http: HttpClient) { 
-    this.http = http; 
+
+  addNewMovieToArray(movie: Movie){
+      let isMovieInList: boolean = false;
+      for (let i= 0; i < this.recentlyAddedMovie.length; i++){
+        if(this.recentlyAddedMovie[i].title === movie.title){
+          this.recentlyAddedMovie[i].popularity = movie.popularity;
+          isMovieInList = true;
+        }
+      }
+      if (isMovieInList){
+        let tempJSON = JSON.stringify(this.recentlyAddedMovie)
+        localStorage.setItem('recentlyAddedMovie', tempJSON)
+      } else {
+        this.recentlyAddedMovie.push(movie)
+        let tempJSON = JSON.stringify(this.recentlyAddedMovie)
+        localStorage.setItem('recentlyAddedMovie', tempJSON)
+      }
+
+  }
+
+  constructor(http: HttpClient) {
+    this.http = http;
     if(localStorage.getItem('movieArray')){
       this.movieArray = JSON.parse(localStorage.getItem('movieArray'))
     }
@@ -53,7 +74,19 @@ export class ApiDataService {
       comparison = -1;
     }
     return comparison;
-  }
+    }
+
+
+    getSearchMovieFromApi(searchString: string): Observable<Movie> | null {
+        this.formUrl = `https://api.themoviedb.org/3/search/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&query=${searchString}`
+
+        if( searchString) {
+            return this.http.get<Movie>(this.formUrl);
+        } else {
+            return null;
+        }
+    }
+
 
   getMovie(): Observable<Movie> {
       return this.http.get<Movie>(this.toplistUrl);
@@ -63,7 +96,7 @@ export class ApiDataService {
   }
   /*	getCat(): Observable<any> {
   console.log(this.JSONmovie)
-  return this.http.get<any>(this.url, {params: 
+  return this.http.get<any>(this.url, {params:
     { op: 'get',
     group: 'F9648',
     key: 'film2'}

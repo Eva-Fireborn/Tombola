@@ -4,7 +4,8 @@
 
 p {
     position: relative;
-    font-family: "roboto";
+
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-size: 1.8em;
     letter-spacing: 4px;
@@ -13,23 +14,9 @@ p {
     background-repeat: no-repeat;
     background-size: 80%;
     -webkit-background-clip: text;
-   /* 
-   animation: animate 18s linear infinite;
-   -webkit-background-clip: text;
-  -webkit-text-fill-color: rgba(255, 255, 255, 0);
-  animation-play-state: 18s
-  paused;*/
 }
 
-  /*
- @keyframes animate {
-    0% {
-      background-position: -250%;
-    }
-    90% {
-      background-position: 250%;
-    }
-  }*/
+
   
   .textp{
     font-size: small;
@@ -46,8 +33,6 @@ p {
   padding: 75px;
   letter-spacing: 1px;
   font-family: Roboto Condensed Light;
-  /*background-color:#ffffff;
-    color: #676666;*/
    text-align: justify;
     text-transform: lowercase;
     

@@ -9,6 +9,7 @@ export class LandingPageButtonComponent implements OnInit {
 
   onCLick() {
     console.log('Du har klickat på mig');
+    open ('https://routerLink="/Rating" routerLinkActive="routed"' );
   }
 
   constructor() {
@@ -17,7 +18,6 @@ export class LandingPageButtonComponent implements OnInit {
   }
 
   ngOnInit() {
-  
-    
+     
   }
 }

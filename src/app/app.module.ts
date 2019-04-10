@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CreditsModule } from './credits/credits.module';
 import { LandingPageModule } from './landing-page/landing-page.module';
 import { SearchRateFilmModule } from './search-rate-film/search-rate-film.module';
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -26,7 +28,10 @@ import { FooterComponent } from './footer/footer.component';
     ToplistModule,
     UserFormModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
