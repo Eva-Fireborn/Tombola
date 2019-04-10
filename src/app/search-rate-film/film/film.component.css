@@ -40,3 +40,6 @@ h3 {
 .movieInfo {
   margin: 0px;
 }
+.filmContainer:hover {
+  transform: scale(1.1)
+}

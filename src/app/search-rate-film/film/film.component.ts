@@ -12,12 +12,12 @@ export class FilmComponent implements OnInit {
   originalList: Movie [];
   selectedFilm: Movie;
   recentlyAddedMovie: [] = [];
-
+  indexForMovieList = 0;
 
   constructor(private apiData: ApiDataService) { }
 
   ngOnInit() {
-    this.apiData.getDiscoverList().subscribe(movieInformation => {
+    this.apiData.getDiscoverList(this.indexForMovieList).subscribe(movieInformation => {
       let movieInfo = movieInformation.results;
       this.movieMix_ratings = movieInfo.map( obj => ({
         title: obj.title,
@@ -33,7 +33,7 @@ export class FilmComponent implements OnInit {
     this.recentlyAddedMovie = JSON.parse(localStorage.getItem('recentlyAddedMovie'))
 
 
-    this.apiData.getDiscoverList().subscribe(movieInformation => {
+    this.apiData.getDiscoverList(this.indexForMovieList).subscribe(movieInformation => {
       let movieInfo = movieInformation.results;
       this.originalList = movieInfo.map( obj => ({
         title: obj.title,
@@ -128,7 +128,20 @@ export class FilmComponent implements OnInit {
       comparison = -1;
     }
     return comparison;
-  }  changeColor(i) {
+  }
+  shuffleRandomMovies() {
+    this.indexForMovieList = Math.floor(Math.random() * Math.floor(12));
+    this.apiData.getDiscoverList(this.indexForMovieList).subscribe(movieInformation => {
+      let movieInfo = movieInformation.results;
+      this.movieMix_ratings = movieInfo.map( obj => ({
+        title: obj.title,
+        poster_path: obj.poster_path,
+        overview: obj.overview,
+        release_date: obj.release_date,
+        vote_average: obj.vote_average,
+        popularity: obj.popularity = 0
+      }));
 
+    })
   }
 }

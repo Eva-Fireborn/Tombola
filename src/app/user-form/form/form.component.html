@@ -5,10 +5,11 @@
                 <h3>Add Movie from Imdb</h3>
                 <label>Title</label>
                 <input id="titleInput" type="text" value=" " formControlName="searchByTitle"/>
-                <ul *ngFor="let movieSearched of movieSearch | slice: 0:5; let i = index " (click)="addMovieToMovie(i)"
+                <ul id="titleList"*ngFor="let movieSearched of movieSearch | slice: 0:5; let i = index " (click)="addMovieToMovie(i)"
                 [ngClass]="{'active': selectedIdx == i}">
                     {{movieSearched.title}}
                 </ul>
+                <p>{{movieAddedNotice}}</p>
             </div>
         </form>
     </div>

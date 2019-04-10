@@ -9,13 +9,13 @@
         <input type="radio" name="sortBy" value="dateNew"> Nyast först
         <input type="radio" name="sortBy" value="dateOld"> Äldst först
         <input type="radio" name="sortBy" value="original"> Visa originalet
+        <hr>
+         Give me 20 random movies to rate, NOW! <button (click)="shuffleRandomMovies()" type="button" name="button">Shuffle</button>
     </form>
   </div>
   <div
   class="filmContainer"
   *ngFor="let listItem of movieMix_ratings let i = index"
-  
-
   (click)="selectFilm(listItem)">
       <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
 
