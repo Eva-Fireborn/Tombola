@@ -1,9 +1,10 @@
 .footerContainer{
     background-color: #060606;
     width: 100%;
-    height: 400px;
+    height: auto;
     display: inline-flex;
     font-family: 'Roboto', sans-serif;
+    padding: 20px;
 }
 .ulContainer {
     margin-top: 60px;
@@ -11,6 +12,9 @@
     width: 60%;
     height: 250px;
     overflow: hidden;
+}
+.ulContainer > li:last-child {
+    margin-bottom: 10px;
 }
 figcaption {
     color: white;

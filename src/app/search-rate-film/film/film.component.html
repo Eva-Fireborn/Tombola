@@ -3,14 +3,15 @@
 <div class="container">
   <div class="sortBy">
     <form name="sortBy" (click)="sortByValueFunction($event)">
-        <input type="radio" name="sortBy" value="a-z" > Alfabetiskt
-        <input type="radio" name="sortBy" value="score"> Betyg
-        <input type="radio" name="sortBy" value="over8"> Enbart filmer med betyg över 8
-        <input type="radio" name="sortBy" value="dateNew"> Nyast först
-        <input type="radio" name="sortBy" value="dateOld"> Äldst först
-        <input type="radio" name="sortBy" value="original"> Visa originalet
+        <input type="radio" name="sortBy" value="a-z" > <span>A-Z</span>
+        <input type="radio" name="sortBy" value="score"> <span>Highest score</span>
+        <input type="radio" name="sortBy" value="dateNew"> <span>Newest releases</span>
+        <input type="radio" name="sortBy" value="dateOld"> <span>Oldest releases</span>
+        <input type="radio" name="sortBy" value="over8"> <span>Only movies with a score above 8</span>
     </form>
   </div>
+
+
   <div class="filmContainer" *ngFor="let listItem of movieMix_ratings"
 
   (click)="selectFilm(listItem)">
@@ -19,6 +20,5 @@
     <h2>{{listItem.title}}</h2>
     <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
     <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
-    <p class="movieInfo">Klicka för mer info</p>
-  </div>
+    <p class="movieInfo">Click for more info.</p>
 </div>

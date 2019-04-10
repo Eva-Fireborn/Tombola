@@ -1,10 +1,10 @@
 <div class="jumbotron text-center">
 <h1>Movie-Mix</h1>
-<h3>Din totalt uniqa top 10 lista</h3>
+<h3>Dina 10 högst rankade filmer</h3>
 </div>
-<!--<div *ngIf="movieMix_ratings.length === 0">
+<div *ngIf="movieMix_ratings.length === 0">
   <p>Du har inte lagt in några filmer ännu</p>
-</div>-->
+</div>
 <div class="container"
   *ngFor="let listItem of movieMix_ratings | slice: 0:10;">
 <div class="row" style="border: 1px solid black;">
