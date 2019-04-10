@@ -21,6 +21,8 @@ export class FormComponent implements OnInit {
     yourOverview: AbstractControl;
     yourPopularity: AbstractControl;
 
+    /*style*/
+    selectedIdx;
     constructor(private movieDataList: ApiDataService) {  }
 
     groupPostMovie = new FormGroup ({
@@ -91,8 +93,8 @@ export class FormComponent implements OnInit {
 
 }
     addMovieToMovie(movieIndex: any) {
+        this.selectedIdx = movieIndex;
         this.movieDataList.addNewMovieToArray(this.movieSearch[movieIndex])
-
-        console.log(this.movieSearch[movieIndex]);
+        setTimeout(() => { this.selectedIdx = null; }, 2000);
     }
 }

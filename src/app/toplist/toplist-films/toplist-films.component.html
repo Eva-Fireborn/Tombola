@@ -1,11 +1,8 @@
-<div class="jumbotron text-center">
-<h1>Movie-Mix</h1>
-<h3>Din totalt uniqa top 10 lista</h3>
+<div class="headerText">
+<h1>MovieMix Toplistan</h1>
 </div>
-<!--<div *ngIf="movieMix_ratings.length === 0">
-  <p>Du har inte lagt in några filmer ännu</p>
-</div>-->
-<div class="container"
+
+<!-- <div class="container"
   *ngFor="let listItem of movieMix_ratings | slice: 0:10;">
 <div class="row" style="border: 1px solid black;">
   <div class="col-sm-7">
@@ -34,6 +31,40 @@
           <p class="movieInfo">{{listItem.overview}}</p>
       </div>
     </div>
-   </div>
-  </div>
+   </div> -->
+
+<!-- <div class="container">
+  <div class="filmContainer" *ngFor="let listItem of movieMix_ratings">
+      <div *ngIf="listItem.poster_path">
+
+      <img class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
+      </div> -->
+      <!-- <div *ngIf="!listItem.poster_path">
+                <img class="moviePosters404" src="assets/images/404Movie.png" alt="xoxo">
+        </div> -->
+    <!-- <h2>{{listItem.title}}</h2>
+    <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
+    <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
+      <br><p>Your vote: {{listItem.popularity}}</p>
+  </div> -->
+
+
+
+
+
+
+<div class="container">
+ <div class="filmContainer" *ngFor="let listItem of movieMix_ratings">
+     <!-- <div *ngIf="listItem.poster_path"> -->
+     <img *ngIf="listItem.poster_path" class="moviePosters" src="https://image.tmdb.org/t/p/w185/{{listItem.poster_path}}" alt="Filmposter">
+     <!-- </div> -->
+     <div *ngIf="!listItem.poster_path">
+               <img class="moviePosters404" src="assets/images/404Movie.png" alt="xoxo">
+       </div>
+   <h2>{{listItem.title}}</h2>
+   <h3> <img class="starRating" src='http://imgur.com/I0EwG.png http://imgur.com/I0EwG.png' /><span>IMDB SCORE {{listItem.vote_average}}</span></h3>
+   <p class="movieReleaseDate">Release: {{listItem.release_date}}</p>
+     <br><p>Your vote: {{listItem.popularity}}</p>
+
+</div>
 </div>
