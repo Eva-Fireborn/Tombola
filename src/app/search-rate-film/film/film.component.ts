@@ -33,21 +33,23 @@ export class FilmComponent implements OnInit {
   }
   
   voteOnFilm(selectedFilm){
-    this.apiData.updateMovieArray(selectedFilm)
-    let index: number;
-    for ( let i=0; i < this.movieMix_ratings.length; i++){
-      if (selectedFilm.title === this.movieMix_ratings[i].title)
-      index = i +1;
-    }
-    if (index > this.movieMix_ratings.length){
-      index = 0;
-    }
-    this.selectedFilm = this.movieMix_ratings[index];
-    this.recentlyAddedMovie = this.recentlyAddedMovie.filter(movie => movie !== selectedFilm)
-    let tempJSON = JSON.stringify(this.recentlyAddedMovie);
-    localStorage.setItem('recentlyAddedMovie', tempJSON);
-    
+    if (selectedFilm !== null){
+      this.apiData.updateMovieArray(selectedFilm)
+      let index: number;
+      for ( let i=0; i < this.movieMix_ratings.length; i++){
+        if (selectedFilm.title === this.movieMix_ratings[i].title)
+        index = i +1;
+      }
+      if (index > this.movieMix_ratings.length){
+        index = 0;
+      }
+      this.selectedFilm = this.movieMix_ratings[index];
+      this.recentlyAddedMovie = this.recentlyAddedMovie.filter(movie => movie !== selectedFilm)
+      let tempJSON = JSON.stringify(this.recentlyAddedMovie);
+      localStorage.setItem('recentlyAddedMovie', tempJSON);
+    } 
   }
+  
   selectFilm(listItem){
     this.selectedFilm = listItem;
     window.scrollTo(0,0);

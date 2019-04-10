@@ -52,7 +52,7 @@ export class FormComponent implements OnInit {
     onChanges(): void {
         this.groupPostMovie.get('searchByTitle').valueChanges.subscribe(val => {
             this.chosenMovie = val ;
-            console.log('listOfSearchMovie' , this.chosenMovie);
+            
 
             if( this.chosenMovie) {
                 this.movieDataList.getSearchMovieFromApi(this.chosenMovie).subscribe(
@@ -66,7 +66,7 @@ export class FormComponent implements OnInit {
                             vote_average: formObj.vote_average,
                             popularity: formObj.popularity = 0
                         }));
-                    console.log('form-ngOnInit movieSearchList: ' , this.movieSearch)
+                   
                     })
                 } else {
                     this.movieSearch = null;
@@ -100,7 +100,7 @@ export class FormComponent implements OnInit {
         this.selectedIdx = movieIndex;
         this.movieDataList.addNewMovieToArray(this.movieSearch[movieIndex])
         this.movieAddedNotice = `${this.movieSearch[movieIndex].title} Was added to your library`
-        console.log(this.movieSearch[movieIndex].title)
+        
         setTimeout(() => { this.selectedIdx = null; this.groupPostMovie.reset();  }, 200);
     }
 }
