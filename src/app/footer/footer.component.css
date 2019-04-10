@@ -1,5 +1,4 @@
 .footerContainer{
-
     background-color: rgb(0,0,0,0.7); 
     width: 100%;
     height: auto;
@@ -11,11 +10,8 @@
     margin-top: 60px;
     display: inline-flex;
     width: 60%;
-    height: 250px;
+    height: auto;
     overflow: hidden;
-}
-.ulContainer > li:last-child {
-    margin-bottom: 10px;
 }
 figcaption {
     color: #ffffff;
