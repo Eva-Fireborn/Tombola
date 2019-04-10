@@ -43,3 +43,6 @@ h3 {
 span {
   margin-right: 30px;
 }
+.filmContainer:hover {
+  transform: scale(1.1)
+}

@@ -9,7 +9,21 @@ import { Movie } from './movie';
 export class ApiDataService {
   http: HttpClient = null;
   toplistUrl: string = 'https://api.themoviedb.org/3/movie/top_rated?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&page=1'
-  discoverUrl: string = 'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
+  discoverUrl: string[] =
+  [
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=3',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=4',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=5',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=6',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=7',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=8',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=9',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=10',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=11',
+    'https://api.themoviedb.org/3/discover/movie?api_key=b77e44fd4073dc13e011647c4946a9ae&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=12',
+  ]
   private movieArray: Movie [] =[];
   private recentlyAddedMovie: Movie [] =[];
   chosenMovie: string;
@@ -91,8 +105,8 @@ export class ApiDataService {
   getMovie(): Observable<Movie> {
       return this.http.get<Movie>(this.toplistUrl);
   }
-  getDiscoverList(): Observable<Movie> {
-    return this.http.get<Movie>(this.discoverUrl);
+  getDiscoverList(indexForMovieList): Observable<Movie> {
+    return this.http.get<Movie>(this.discoverUrl[indexForMovieList]);
   }
   /*	getCat(): Observable<any> {
   console.log(this.JSONmovie)
