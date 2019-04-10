@@ -22,6 +22,7 @@ export class FormComponent implements OnInit {
     yourPopularity: AbstractControl;
 
     movieAddedNotice:string = ''
+    msgWhenMovieAdded:string = ''
     /*style*/
     selectedIdx;
 
@@ -92,7 +93,8 @@ export class FormComponent implements OnInit {
         let newMovieObj = (Object.assign(titleObj, realsedayObj, overviewObj, popuarityObj, newVote, newPoster ))
 
         this.movieDataList.updateMovieArray(newMovieObj)
-
+        this.addYourMovieGroup.reset()
+        this.msgWhenMovieAdded = `The movie have been added to your database`
 }
     addMovieToMovie(movieIndex: any) {
         this.selectedIdx = movieIndex;

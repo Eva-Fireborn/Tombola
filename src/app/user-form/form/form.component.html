@@ -28,7 +28,7 @@
             [class.invalid]="yourTitle.invalid && (yourTitle.touched || yourTitle.dirty)"/>
 
             <div class="errorMessage" *ngIf="(yourTitle.errors?.required || yourTitle.errors?.minlength) && yourTitle.touched">
-			You have to enter at least 2 letters
+			      You have to enter at least 2 letters
 		</div>
 
 
@@ -64,11 +64,15 @@
             <div class="errorMessage" *ngIf="(yourPopularity.errors?.required || yourPopularity.errors?.minlength || yourPopularity.errors?.maxlength) && yourPopularity.touched">
 			Write a number between 1 and 10!!
 		</div>
+    
+      <button type="button" [disabled]="addYourMovieGroup.invalid" (click)="uploadMovie()">
+                  Upload your Movie </button><p class="test">{{msgWhenMovieAdded}}</p>
 
 
-            <button type="button" [disabled]="addYourMovieGroup.invalid" (click)="uploadMovie()">
-                Upload your Movie </button>
+
         </div>
+
         </form>
+
     </div>
 </div>

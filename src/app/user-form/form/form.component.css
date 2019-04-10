@@ -6,7 +6,7 @@
     margin-top: 10em;
 }
 .inputFormContainer:last-child {
-    margin-bottom: 6em;
+    margin-bottom: 15em;
 }
 .inputForm {
     display: inline-flex;
@@ -43,6 +43,7 @@ label {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 3em;
 }
 label {
     color: black;
